@@ -1,0 +1,95 @@
+/* Estetik Modern Sewa Tripod App */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* { font-family: 'Poppins', sans-serif; }
+
+body { 
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); 
+  min-height: 100vh; 
+  color: #333;
+}
+
+.container-fluid { background: rgba(255,255,255,0.95); min-height: 100vh; }
+
+.sidebar { 
+  background: linear-gradient(180deg, #1e3c72 0%, #2a5298 100%) !important; 
+  min-height: 100vh; 
+  box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+}
+
+.nav-link { color: rgba(255,255,255,0.8) !important; transition: all 0.3s; }
+.nav-link:hover, .nav-link.active { color: #fff !important; background: rgba(255,255,255,0.1); border-radius: 10px; }
+
+.card { 
+  border: none; 
+  border-radius: 20px; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); }
+
+.stats-card { 
+  color: white; 
+  border-radius: 20px; 
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b6b, #feca57, #48cae4);
+}
+
+.btn { 
+  border-radius: 25px; 
+  padding: 12px 30px; 
+  font-weight: 500;
+  transition: all 0.3s;
+  border: none;
+}
+.btn-primary { background: linear-gradient(45deg, #667eea, #764ba2); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(102,126,234,0.4); }
+.btn-success { background: linear-gradient(45deg, #11998e, #38ef7d); }
+.btn-warning { background: linear-gradient(45deg, #f093fb, #f5576c); }
+.btn-danger { background: linear-gradient(45deg, #ff6b6b, #ee5a52); }
+.btn-info { background: linear-gradient(45deg, #4facfe, #00f2fe); }
+
+.table { border-radius: 15px; overflow: hidden; }
+.table th { background: linear-gradient(45deg, #667eea, #764ba2); color: white; }
+.table tbody tr:hover { background: rgba(102,126,234,0.05); }
+
+.badge { padding: 8px 16px; border-radius: 20px; font-weight: 500; }
+
+.alert { border-radius: 15px; border: none; }
+
+.form-control, .form-select { 
+  border-radius: 12px; 
+  border: 2px solid #e9ecef;
+  transition: all 0.3s;
+}
+.form-control:focus, .form-select:focus { 
+  border-color: #667eea; 
+  box-shadow: 0 0 0 0.2rem rgba(102,126,234,0.25);
+}
+
+.img-thumbnail { border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+
+@media print {
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area { position: absolute; left: 0; top: 0; width: 100%; }
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeIn 0.6s ease-out; }
+
+@media (max-width: 768px) { 
+  .sidebar { position: relative !important; z-index: 1000; }
+  .stats-card { margin-bottom: 1rem; }
+}
